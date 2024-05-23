@@ -6,9 +6,16 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from info import START_MSG, CHANNELS, ADMINS, INVITE_MSG
 from utils import Media
+import random
 
 logger = logging.getLogger(__name__)
 
+PICS = [
+ "https://telegra.ph/file/6c770e593b001c2b329ed.jpg",
+ "https://telegra.ph/file/8bb14b60ac3a50f45a3ac.jpg",
+ "https://telegra.ph/file/72f141ea1979d77a9bc73.jpg",
+ "https://telegra.ph/file/95b82caebd9d4301114a8.jpg"
+]
 
 @Client.on_message(filters.command('start'))
 async def start(bot, message):
@@ -16,13 +23,20 @@ async def start(bot, message):
     if len(message.command) > 1 and message.command[1] == 'subscribe':
         await message.reply(INVITE_MSG)
     else:
-        buttons = [[
-            InlineKeyboardButton('Search Here', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('Go Inline', switch_inline_query=''),
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(START_MSG, reply_markup=reply_markup)
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=f"""𝙷𝚎𝚢 𝚝𝚑𝚎𝚛𝚎 {message.from_user.mention} 👋,
 
+𝙸 𝚊𝚖 𝙲𝚘𝚗𝚊𝚗 𝙴𝚍𝚘𝚐𝚊𝚠𝚊, 𝙸 𝚌𝚊𝚗 𝚙𝚛𝚘𝚟𝚒𝚍𝚎 𝙷𝚘𝚕𝚕𝚢𝚠𝚘𝚘𝚍 𝙼𝚊𝚕𝚊𝚢𝚊𝚕𝚊𝚖 𝙳𝚞𝚋𝚋𝚎𝚍 𝙼𝚘𝚟𝚒𝚎𝚜 𝚏𝚘𝚛 𝚈𝚘𝚞. 𝙹𝚞𝚜𝚝 𝚜𝚎𝚊𝚛𝚌𝚑 𝚝𝚑𝚎 𝚖𝚘𝚟𝚒𝚎 𝚢𝚘𝚞 𝚠𝚊𝚗𝚝 & 𝚎𝚗𝚓𝚘𝚢 😍""",
+            reply_markup=InlineKeyboardMarkup( [[
+                InlineKeyboardButton('Search Here', switch_inline_query_current_chat=''),
+                ],[
+                InlineKeyboardButton("𝚄𝚙𝚍𝚊𝚝𝚎𝚜 📢", url="t.me/echobotzz"),
+                InlineKeyboardButton("𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 👨‍💻", url="t.me/YourPsychoTG"),
+                InlineKeyboardButton('Go Inline', switch_inline_query='')
+                ]]
+                )
+        )
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
