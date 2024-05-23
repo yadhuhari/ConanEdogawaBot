@@ -30,9 +30,9 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 default_start_msg = """
-**Hi, I'm Media Search bot**
+𝙷𝚎𝚢 𝚝𝚑𝚎𝚛𝚎 👋,
 
-Here you can search files in inline mode. Just press following buttons and start searching.
+𝙸 𝚊𝚖 𝙲𝚘𝚗𝚊𝚗 𝙴𝚍𝚘𝚐𝚊𝚠𝚊, 𝙸 𝚌𝚊𝚗 𝚙𝚛𝚘𝚟𝚒𝚍𝚎 𝙷𝚘𝚕𝚕𝚢𝚠𝚘𝚘𝚍 𝙼𝚊𝚕𝚊𝚢𝚊𝚕𝚊𝚖 𝙳𝚞𝚋𝚋𝚎𝚍 𝙼𝚘𝚟𝚒𝚎𝚜 𝚏𝚘𝚛 𝚈𝚘𝚞. 𝙹𝚞𝚜𝚝 𝚜𝚎𝚊𝚛𝚌𝚑 𝚝𝚑𝚎 𝚖𝚘𝚟𝚒𝚎 𝚢𝚘𝚞 𝚠𝚊𝚗𝚝 & 𝚎𝚗𝚓𝚘𝚢 😍
 """
 
 START_MSG = environ.get('START_MSG', default_start_msg)
