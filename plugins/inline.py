@@ -43,7 +43,7 @@ async def answer(bot, query):
             InlineQueryResultCachedDocument(
                 title=file.file_name,
                 document_file_id=file.file_id,
-                caption=file.caption or "",
+                caption=f"@echobotzz {file.file_name}",
                 description=f'Size: {size_formatter(file.file_size)}\nType: {file.file_type}',
                 reply_markup=reply_markup
             )
@@ -79,8 +79,8 @@ def get_reply_markup(username, query):
     url = 't.me/share/url?url=' + quote(SHARE_BUTTON_TEXT.format(username=username))
     buttons = [
         [
-            InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
-            InlineKeyboardButton('Share bot', url=url),
+            InlineKeyboardButton('Search again ✨', switch_inline_query_current_chat=query),
+            InlineKeyboardButton('Share bot 🦋', url=url),
         ]
     ]
     return InlineKeyboardMarkup(buttons)
