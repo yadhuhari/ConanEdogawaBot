@@ -45,6 +45,7 @@ async def answer(bot, query):
                 document_file_id=file.file_id,
                 caption=f"@echobotzz {file.file_name}",
                 description=f'Size: {size_formatter(file.file_size)}\nType: {file.file_type}',
+                thumb="https://telegra.ph/file/798441372948f38116ad2.jpg",
                 reply_markup=reply_markup
             )
         )
